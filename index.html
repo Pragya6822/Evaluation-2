@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Product Dynamic Web page</title>
+    <script
+      src="https://kit.fontawesome.com/8e2a4fca49.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 style="text-align: center;">My Dynamic Product Web Application</h1>
+    <div id="container">
+      <div class="child-container">
+        <header>
+          <div class="header">
+            <div class="search">
+              <input type="text" id="search" placeholder="Search for products..."/>
+              <button id="search-btn">Search</button>
+            </div>
+            <div class="cart" onclick="toggleCart()">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+          </div>
+        </header>
+        <section>
+          <div class="sort-select">
+            <label for="sort">Sort By:</label>
+            <select id="sort" onchange="sortProducts()">
+              <option value="">Select</option>
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+              <option value="priceLowHigh">Price Low to High</option>
+              <option value="priceHighLow">Price High to Low</option>
+            </select>
+          </div>
+          <div id="product-container"></div>
+        </section>
+
+        <!-- Cart Popup -->
+        <!-- <div id="cart-popup" class="cart-popup" style="display: none">
+          <h2>Your Cart</h2>
+          <div id="cart-container">
+            <div class="cart-container">
+                <div class="cart-icon" onclick="toggleCart()">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span id="cart-counter">0</span>
+                </div> -->
+                
+                <div id="cart-popup" class="cart-popup" style="display: none;">
+                  <h2>Your Cart</h2>
+                  <div id="cart-container"></div>
+                  <p id="total"></p>
+                  <button onclick="toggleCart()">Close Cart</button>
+                </div>
+            <!-- </div>
+        </div> -->
+
+        <!-- Review and Rating System -->
+        <form id="review-form">
+          <label for="review-input">Review:</label>
+          <textarea id="review-input" maxlength="200"></textarea>
+          <label for="rating-input">Rating:</label>
+          <input type="number" id="rating-input" min="1" max="5" />
+          <button id="review-submit-btn">Submit Review</button>
+        </form>
+
+        <!-- Product Ratings and Reviews Display -->
+        <div id="product-card">
+          <h2>Product Name</h2>
+          <p id="average-rating"></p>
+          <p id="total-reviews"></p>
+          <p id="latest-review"></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <!-- <script src="productDetail.js"></script> -->
+  </body>
+</html>
